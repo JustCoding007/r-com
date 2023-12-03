@@ -76,3 +76,15 @@ export interface Report {
   late_entry_count: number;
   absent_count: number;
 }
+
+export interface AttendanceTable {
+  attendance_id: number;
+  employee_id: string;
+  full_name: string;
+  attendance_date: Date;
+  entry_time: Date;
+  entry_status: TimeStatus;
+  exit_time: Date;
+  exit_status: TimeStatus;
+  work_day_status: WorkDayStatus;
+}
