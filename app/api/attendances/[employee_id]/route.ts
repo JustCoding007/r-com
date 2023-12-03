@@ -19,9 +19,12 @@ export const GET = async (
   if (size && parseInt(size)) pageSize = parseInt(size);
 
   try {
-    const results = await query(pageSize, offSet, employee_id);
-    return results.rows.length
-      ? NextResponse.json({ count: results.rowCount, data: results.rows })
+    const employeeAttendance = await query(pageSize, offSet, employee_id);
+    return employeeAttendance.rows.length
+      ? NextResponse.json({
+          count: employeeAttendance.rowCount,
+          data: employeeAttendance.rows,
+        })
       : NextResponse.json(
           {
             error: 'Employee with the given ID does not exist',

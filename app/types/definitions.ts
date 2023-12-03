@@ -57,9 +57,35 @@ export interface Address {
   zip_code: string;
 }
 
+export interface EmployeeTable {
+  employee_id: string;
+  first_name: string;
+  last_name: string;
+  birth_date: Date;
+  gender: Gender;
+  phone: string;
+  email: string;
+  job_title: string;
+  status: string;
+  salary: number;
+  day_off: DayOff;
+}
+
 export interface Attendance {
   attendance_id: number;
   employee_id: string;
+  attendance_date: Date;
+  entry_time: Date;
+  entry_status: TimeStatus;
+  exit_time: Date;
+  exit_status: TimeStatus;
+  work_day_status: WorkDayStatus;
+}
+
+export interface AttendanceTable {
+  attendance_id: number;
+  employee_id: string;
+  full_name: string;
   attendance_date: Date;
   entry_time: Date;
   entry_status: TimeStatus;
@@ -75,16 +101,4 @@ export interface Report {
   on_time_entry_count: number;
   late_entry_count: number;
   absent_count: number;
-}
-
-export interface AttendanceTable {
-  attendance_id: number;
-  employee_id: string;
-  full_name: string;
-  attendance_date: Date;
-  entry_time: Date;
-  entry_status: TimeStatus;
-  exit_time: Date;
-  exit_status: TimeStatus;
-  work_day_status: WorkDayStatus;
 }

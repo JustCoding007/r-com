@@ -12,8 +12,11 @@ export const GET = async (request: NextRequest) => {
   if (size && parseInt(size)) pageSize = parseInt(size);
 
   try {
-    const results = await queryAll(pageSize, offSet);
-    return NextResponse.json({ count: results.rowCount, data: results.rows });
+    const attendances = await queryAll(pageSize, offSet);
+    return NextResponse.json({
+      count: attendances.rowCount,
+      data: attendances.rows,
+    });
   } catch (error) {
     return NextResponse.json({ error: 'Failed to query the database' });
   }

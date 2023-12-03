@@ -1,15 +1,18 @@
 import { sql } from '@vercel/postgres';
 import { NextRequest, NextResponse } from 'next/server';
 interface Props {
-  params: { id: string };
+  params: { employee_id: string };
 }
 
-export const GET = async (request: NextRequest, { params: { id } }: Props) => {
+export const GET = async (
+  request: NextRequest,
+  { params: { employee_id } }: Props
+) => {
   try {
     const data = await sql`
     SELECT * 
     FROM employees
-    WHERE employee_id = ${id}`;
+    WHERE employee_id = ${employee_id}`;
     if (!data.rows.length)
       return NextResponse.json(
         { error: 'Employee with the given id does not exist' },
