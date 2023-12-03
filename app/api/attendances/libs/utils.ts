@@ -17,6 +17,7 @@ export const queryAll = async (page: number, limit: number) => {
   FROM attendances a
   JOIN employees em USING(employee_id)
   JOIN profiles p USING(profile_id)
+  ORDER BY attendance_date DESC
   LIMIT ${page} OFFSET ${limit}
      `;
   return data;
