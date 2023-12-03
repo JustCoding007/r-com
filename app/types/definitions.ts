@@ -95,10 +95,10 @@ export interface AttendanceTable {
 }
 
 export interface Report {
-  report_id: number;
   employee_id: string;
   full_name: string;
   on_time_entry_count: number;
   late_entry_count: number;
+  early_exit_count: number;
   absent_count: number;
 }
