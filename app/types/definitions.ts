@@ -94,7 +94,7 @@ export interface AttendanceTable {
   work_day_status: WorkDayStatus;
 }
 
-export interface Report {
+export interface ReportTable {
   employee_id: string;
   full_name: string;
   on_time_entry_count: number;
@@ -102,3 +102,37 @@ export interface Report {
   early_exit_count: number;
   absent_count: number;
 }
+
+export interface Product {
+  product_id: number;
+  title: string;
+  price: number;
+  quantity_in_stock: number;
+  category: string;
+  last_update: Date;
+}
+
+export interface ProductTable {
+  product_id: number;
+  title: string;
+  price: number;
+  quantity_in_stock: number;
+  category: string;
+  last_update: Date;
+  inventory_status: 'LOW' | 'IN_STOCK' | 'OUT_OF_STOCK';
+}
+
+export const labels = [
+  {
+    value: 'bug',
+    label: 'Bug',
+  },
+  {
+    value: 'feature',
+    label: 'Feature',
+  },
+  {
+    value: 'documentation',
+    label: 'Documentation',
+  },
+];
